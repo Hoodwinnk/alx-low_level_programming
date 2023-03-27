@@ -1,28 +1,24 @@
-#include "main.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
- * _atoi - convert a string to an integer.
- * @s: the string to be comverted.
- *
- *Return: The integer value of the comverted string.
- */
-
-int _atoi(char *s)
+* main - generates keygen.
+* Return: 0 Always.
+*/
+int main(void)
 {
-	int sign = 1;
-	unsigned int num = 0;
+int r = 0, c = 0;
+time_t t;
 
-	do {
-
-		if (*s == '-')
-			sign *= -1;
-
-		else if (*s >= '0' && *s <= '9')
-			num = (num * 10) + (*s - '0');
-
-		else if (num > 0)
-			break;
-	} while (*s++);
-
-	return (num * sign);
+srand((unsigned int) time(&t));
+while (c < 2772)
+{
+r = rand() % 128;
+if ((c + r) > 2772)
+break;
+c = c + r;
+printf("%c", r);
+}
+printf("%c\n", (2772 - c));
+return (0);
 }
