@@ -1,26 +1,13 @@
 #include "main.h"
-
 /**
- * _strncat - concatenates two strings
- *
- * @src: The source of strings
- * @dest: The destination of the string
- * @n: The length of int
- *
- * Return: pointer to the resulting string dest
+ * _print_rev_recursion - Prints a string in reverse.
+ * @s: The string to be printed.
  */
-char *_strncat(char *dest, char *src, int n)
+void _print_rev_recursion(char *s)
 {
-	int i, j;
-
-	for (i = 0; dest[i] != '\0'; i++)
+	if (*s)
 	{
-		continue;
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
 	}
-	for (j = 0; src[j] != '\0' && j < n; j++)
-	{
-		dest[i + j] = src[j];
-	}
-	dest[i + j] = '\0';
-	return (dest);
 }
