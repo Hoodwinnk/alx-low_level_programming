@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void print_char(va_list arg);
+void print_int(va_list arg);
+void print_float(va_list arg);
+void print_string(va_list arg);
+void print_all(const char * const format, ...);
+
 /**
   * print_all - Prints anything
   * @format: The conversion specifier to prints
